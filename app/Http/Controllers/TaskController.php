@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreTaskRequest;
-use App\Http\Requests\UpdateTaskRequest;
+use Illuminate\Http\Request;
+use App\Http\Requests\TaskRequest;
 use App\Models\Task;
 
 class TaskController extends Controller
@@ -20,10 +20,10 @@ class TaskController extends Controller
     }
 
     /**
-     * @param App\Http\Requests\StoreTaskRequest $request
+     * @param TaskRequest $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(StoreTaskRequest $request)
+    public function store(TaskRequest $request)
     {
         $task = Task::create($request->all());
 
@@ -44,11 +44,11 @@ class TaskController extends Controller
     }
 
      /**
-     * @param App\Http\Requests\UpdateTaskRequest $request
+     * @param TaskRequest $request
      * @param App\Models\Task;
      * @return \Illuminate\Http\JsonResponse
      */
-    public function update(UpdateTaskRequest $request, Task $task)
+    public function update(TaskRequest $request, Task $task)
     {
         $task->title = $request->title;
 

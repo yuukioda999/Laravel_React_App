@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreTaskRequest extends FormRequest
+class TaskRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,14 @@ class StoreTaskRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|max:255'
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'title' => 'タイトル'
         ];
     }
 }

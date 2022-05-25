@@ -38,6 +38,40 @@ class TaskTest extends TestCase
     /**
      * @test
      */
+    public function タイトルが空の場合のバリデーション()
+    {
+        $data = [
+            'title' => '',
+        ];
+
+        $response = $this->postJson('api/tasks',$data);
+        $response
+            ->assertStatus(422)
+            ->assertJsonValidationErrors(
+                [ 'title' => 'タイトルは必ず指定してください。']
+            );
+    }
+
+    /**
+     * @test
+     */
+    public function タイトル文字数256文字以上の場合のバリデーション()
+    {
+        $data = [
+            'title' => str_repeat('a',256),
+        ];
+
+        $response = $this->postJson('api/tasks',$data);
+        $response
+            ->assertStatus(422)
+            ->assertJsonValidationErrors(
+                [ 'title' => 'タイトルは、255文字以下で指定してください。']
+            );
+    }
+
+    /**
+     * @test
+     */
     public function 更新することができる()
     {
         $task = Task::factory()->create();
