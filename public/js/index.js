@@ -2271,6 +2271,19 @@ var axios_1 = __importDefault(__webpack_require__(/*! axios */ "./node_modules/a
 var react_query_1 = __webpack_require__(/*! react-query */ "./node_modules/react-query/es/index.js");
 
 var TaskPage = function TaskPage() {
+  /*
+      const [tasks, setTasks] = useState<Task[]>([])
+  
+      const getTasks = async () => {
+          const {data} = await axios.get<Task[]>('api/tasks')
+          console.log(data);
+          setTasks(data);
+      }
+  
+      useEffect(() =>{
+          getTasks()
+      })
+  */
   var _ref = (0, react_query_1.useQuery)('task', function () {
     return __awaiter(void 0, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
       var _yield$axios_1$defaul, data;

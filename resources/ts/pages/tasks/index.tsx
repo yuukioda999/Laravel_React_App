@@ -13,6 +13,20 @@ type Task = {
 
 const TaskPage: React.VFC = () => {
 
+/*
+    const [tasks, setTasks] = useState<Task[]>([])
+
+    const getTasks = async () => {
+        const {data} = await axios.get<Task[]>('api/tasks')
+        console.log(data);
+        setTasks(data);
+    }
+
+    useEffect(() =>{
+        getTasks()
+    })
+*/
+
 const {data:tasks,status} = useQuery('task',async () =>{
     const {data} = await axios.get<Task[]>('api/tasks')
     return data
