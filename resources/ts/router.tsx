@@ -6,8 +6,8 @@ import {
   Link
 } from "react-router-dom";
 import TaskPage from "./pages/tasks"
-import LoginPage from "./pages/login/login"
-import HelpPage from "./pages/help/help"
+import LoginPage from "./pages/login"
+import HelpPage from "./pages/help"
 
 const Router = () => {
   return (

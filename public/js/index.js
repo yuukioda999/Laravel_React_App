@@ -2215,10 +2215,10 @@ react_dom_1["default"].render(react_1["default"].createElement(App_1["default"],
 
 /***/ }),
 
-/***/ "./resources/ts/pages/help/help.tsx":
-/*!******************************************!*\
-  !*** ./resources/ts/pages/help/help.tsx ***!
-  \******************************************/
+/***/ "./resources/ts/pages/help/index.tsx":
+/*!*******************************************!*\
+  !*** ./resources/ts/pages/help/index.tsx ***!
+  \*******************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
@@ -2246,9 +2246,9 @@ exports["default"] = HelpPage;
 
 /***/ }),
 
-/***/ "./resources/ts/pages/login/login.tsx":
+/***/ "./resources/ts/pages/login/index.tsx":
 /*!********************************************!*\
-  !*** ./resources/ts/pages/login/login.tsx ***!
+  !*** ./resources/ts/pages/login/index.tsx ***!
   \********************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
@@ -2595,9 +2595,9 @@ var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_mod
 
 var tasks_1 = __importDefault(__webpack_require__(/*! ./pages/tasks */ "./resources/ts/pages/tasks/index.tsx"));
 
-var login_1 = __importDefault(__webpack_require__(/*! ./pages/login/login */ "./resources/ts/pages/login/login.tsx"));
+var login_1 = __importDefault(__webpack_require__(/*! ./pages/login */ "./resources/ts/pages/login/index.tsx"));
 
-var help_1 = __importDefault(__webpack_require__(/*! ./pages/help/help */ "./resources/ts/pages/help/help.tsx"));
+var help_1 = __importDefault(__webpack_require__(/*! ./pages/help */ "./resources/ts/pages/help/index.tsx"));
 
 var Router = function Router() {
   return react_1["default"].createElement(react_router_dom_1.BrowserRouter, null, react_1["default"].createElement("header", {
