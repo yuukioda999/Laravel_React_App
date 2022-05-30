@@ -2879,7 +2879,6 @@ var useUpdateDoneTask = function useUpdateDoneTask() {
   return (0, react_query_1.useMutation)(api.updateDoneTask, {
     onSuccess: function onSuccess() {
       queryClient.invalidateQueries();
-      react_toastify_1.toast.success('更新に成功しました');
     },
     onError: function onError() {
       react_toastify_1.toast.error('更新に失敗しました');
@@ -2897,12 +2896,10 @@ var useCreateTask = function useCreateTask() {
       react_toastify_1.toast.success('登録に成功しました');
     },
     onError: function onError(error) {
-      var _a, _b, _c;
+      var _a, _b;
 
-      console.log((_a = error.response) === null || _a === void 0 ? void 0 : _a.data);
-
-      if ((_b = error.response) === null || _b === void 0 ? void 0 : _b.data.errors) {
-        Object.values((_c = error.response) === null || _c === void 0 ? void 0 : _c.data.errors).map(function (messages) {
+      if ((_a = error.response) === null || _a === void 0 ? void 0 : _a.data.errors) {
+        Object.values((_b = error.response) === null || _b === void 0 ? void 0 : _b.data.errors).map(function (messages) {
           messages.map(function (message) {
             react_toastify_1.toast.error(message);
           });

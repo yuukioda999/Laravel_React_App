@@ -24,7 +24,7 @@ const createTask = async (title: string) =>{
 const updateTask = async ({id,task}: {id: number, task:Task}) =>{
   const {data} = await axios.put<Task>(
     `api/tasks/${id}`, task
-    )
+    ) 
   return data
 }
 
