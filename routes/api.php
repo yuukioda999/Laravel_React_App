@@ -14,10 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::patch('tasks/update-done/{task}','App\Http\Controllers\TaskController@updatedDone');
+Route::post('login', 'App\Http\Controllers\LoginController@login');
+Route::post('logout', 'App\Http\Controllers\LoginController@logout');
 
-Route::apiResource('tasks','App\Http\Controllers\TaskController');
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => 'auth:sanctum'], function(){
+    Route::apiResource('tasks','App\Http\Controllers\TaskController');
+    Route::patch('tasks/update-done/{task}','App\Http\Controllers\TaskController@updatedDone');
+    Route::get('user', function (Request $request) {
+        return $request->user();
+    });
 });
